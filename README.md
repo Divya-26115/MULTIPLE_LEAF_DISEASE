@@ -3,6 +3,9 @@
 ## Project Description
 This project detects plant leaf diseases using image classification.
 Users can upload a leaf image and the system predicts the disease using a trained model.
+Hardware device connection using serial communication
+Leaf disease detection system with hardware integration
+
 
 ## Features
 - Leaf image upload
