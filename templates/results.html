@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaf Disease</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+        height: 100vh;
+        /* color: white; */
+        
+      }
+      /* .row{
+        display: flex;
+        padding-left: 2%;
+        padding-right: 2%;
+      }
+      .column{
+        width: 30%;
+        margin: 1%;
+      } */
+      input[type=submit], input[type=file]{
+        width: 50%;
+        border:1px solid #ffffff;
+        color: white;
+        background-color: transparent;
+        padding:14px 0;
+        margin: 8px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=submit]{
+        border:1px solid #ffffff;
+      }
+      input[type=submit]:hover{
+        background-color: #ffffff;
+        color: black;
+      }
+      h1{
+        color: white;
+      }
+        h2{
+          text-align: center;
+          
+        }
+      .imageCoose{
+        width: 50%;
+        margin: auto;
+        padding: 50px;
+        background-color: rgba(0, 0, 0, 0.50);
+        color: white;
+      }
+      .results{
+        width: 100%;
+        margin: auto;
+        padding: 50px;
+        background-color: wheat;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        font-size: 18px;
+      }
+      img{
+       width: 300px;
+       height: 300px;
+      }
+    </style>
+</head>
+ <body style="background-image: url('static/leaff.jpg');"> 
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+     
+  
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" data-value="#form1" onclick="toggleform(event)">Disease Detector</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <!-- <li ><a data-value="#form1" onclick="toggleform(event)"><span class="glyphicon glyphicon-home"></span>Home</a></li> -->
+          <!-- <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li> -->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+         
+          <li><a href="userlog.html">RECHECK</a></li>
+         
+          <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <div class="container">
+      {% if msg %}
+      <div class="alert alert-warning alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Warning!</strong> {{msg}}
+      </div>
+      {% endif %}
+  <!-- <center> -->
+  <h1 style="padding-top: 50px; text-align: center;">LEAF DISEASE DETECTION</h1>
+
+  <div class="results">
+    <div class="row">
+    <div class="col-md-4">
+      <h2>Selected Image</h2>
+      <hr>
+      {% if (ImageDisplay) %}
+      <center>
+        <img src="{{ImageDisplay}}">
+      </center>
+      
+      {% endif %}
+    </div>
+
+    <div class="col-md-4">
+      <h2>Gray Image</h2>
+      <hr>
+      {% if (ImageDisplay1) %}
+      <center>
+        <img src="{{ImageDisplay1}}">
+      </center>
+      
+      {% endif %}
+    </div>
+
+    <div class="col-md-4">
+      <h2>Edge Detection</h2>
+      <hr>
+      {% if (ImageDisplay2) %}
+      <center>
+        <img src="{{ImageDisplay2}}">
+      </center>
+      
+      {% endif %}
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Segmented Image</h2>
+        <hr>
+        {% if (ImageDisplay3) %}
+        <center>
+          <img src="{{ImageDisplay3}}">
+        </center>
+        
+        {% endif %}
+      </div>
+      <div class="col-md-4">
+        <h2>Image Sharpning</h2>
+        <hr>
+        {% if (ImageDisplay4) %}
+        <center>
+          <img src="{{ImageDisplay4}}">
+        </center>
+        
+        {% endif %}
+      </div>
+    <div class="col-md-4">
+      <h2>Answer</h2>
+      <hr>
+      {% if (status) %}
+          {% if status == "'Healthy_cotton'" %}
+              <p><b>Status: </b>'Healthy_cotton'</p>
+              <p><b>Accuracy:</b>{{accuracy}}</p>
+
+
+              {% elif status == "Banana_healthy" %}
+              <p><b>Status: </b>Banana_healthy</p>
+              <p><b>Accuracy:</b>{{accuracy}}</p>
+
+              {% elif status == "Tomato_healty" %}
+              <p><b>Status: </b>Tomato_healty</p>
+              <p><b>Accuracy:</b>{{accuracy}}</p>
+
+          {% else %}
+              <p><b>Status: </b>{{status}}</p>
+              <p><b>Accuracy:</b>{{accuracy}}</p>
+              <p><b>{{remedie}}</b></p>
+              {% for remedie in remedie1 %}
+                <ul>
+                  <li>{{remedie}}</li>
+                </ul>
+              {% endfor %}
+          {% endif %}
+        {% endif %}
+
+    </div>
+  </div>
+</div>
+</div>
+  </body>
+
+</html>
