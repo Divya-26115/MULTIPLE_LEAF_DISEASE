@@ -1,15 +1,22 @@
 # Multiple Leaf Disease Detection System
 
 ## Project Description
-This project detects plant leaf diseases using Deep Learning and CNN.
-Users can upload leaf images and get disease prediction.
+This project detects plant leaf diseases using image classification.
+Users can upload a leaf image and the system predicts the disease using a trained model.
+
+## Features
+- Leaf image upload
+- Disease prediction
+- Flask web interface
+- User data storage
 
 ## Technologies Used
 - Python
 - Flask
-- CNN
+- Machine Learning
 - HTML/CSS
 - SQLite
+- NumPy
 
 ## How to Run
 pip install -r requirements.txt
