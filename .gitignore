@@ -1,22 +1,7 @@
-# Python cache
+*.db
 __pycache__/
 *.pyc
-
-# Virtual environment
-env/
-venv/
-
-# Dataset folders
+*.npy
+log/
 train/
 test/
-*.npy
-
-# Model files
-*.h5
-*.data-*
-*.index
-checkpoint
-
-# Logs and misc
-log/
-user_data
