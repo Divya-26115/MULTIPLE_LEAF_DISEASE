@@ -47,3 +47,18 @@ Sensor data is transmitted to the web application for monitoring and decision-ma
 ```bash
 pip install -r requirements.txt
 python app.py
+
+Open:
+http://127.0.0.1:5000/
+
+##  📄 Research Publication
+
+This project is part of the research paper:
+
+"GreenVision: Smart Crop Detection & Monitoring"
+
+Submitted to an IEEE International Conference (Currently under review).
+
+## 👩‍💻 Author
+
+Divya M Nagavand
