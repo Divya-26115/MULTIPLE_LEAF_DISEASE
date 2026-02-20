@@ -1,35 +1,48 @@
-# GreenVision – Leaf Disease Detection Module
+# GreenVision – Leaf Disease Detection & IoT Integration Module
 
 ## 📌 Project Overview
 GreenVision is an IoT-based Smart Crop Detection & Monitoring system developed as part of an IEEE conference paper (currently under review).
 
-This repository contains the **Leaf Disease Detection module**, which uses a Convolutional Neural Network (CNN) model to classify plant leaf diseases from uploaded images. The system is integrated with a Flask-based web interface 
+This repository contains the Leaf Disease Detection module integrated with hardware-based environmental monitoring using serial communication.
+
+The system combines CNN-based image classification with real-time sensor data collection from IoT hardware.
 
 ## 🚀 Features
-- Leaf image upload via web interface
-- CNN-based disease classification
-- Flask web application
+- Leaf image upload via Flask web interface
+- CNN-based plant disease classification
+- Real-time prediction results
+- Serial communication with hardware module
+- Integration with environmental sensors (soil moisture, temperature, humidity)
 - SQLite database for user data storage
-- Hardware device connection using serial communication (for system integration)
+
+## 🔌 Hardware Integration
+The system communicates with IoT hardware (ESP32/Arduino) using serial communication.
+
+Sensors used:
+- DHT11 (Temperature & Humidity)
+- Soil Moisture Sensor
+- Relay module for irrigation control
+
+Sensor data is transmitted to the web application for monitoring and decision-making.
 
 ## 🛠 Technologies Used
 - Python
 - Flask
-- TensorFlow / Keras (CNN Model)
+- TensorFlow / Keras (CNN)
 - NumPy
-- HTML / CSS
 - SQLite
-- Machine Learning
+- HTML / CSS
+- Serial Communication (PySerial)
+- IoT Hardware (ESP32 / Arduino)
 
-## 🧠 System Architecture
-The module works as follows:
-1. User uploads a plant leaf image.
-2. Image is preprocessed and passed to the trained CNN model.
-3. Model predicts the disease category.
-4. Result is displayed through the Flask web interface.
-5. Data can be integrated with IoT monitoring hardware.
+## 🧠 Working Principle
+1. Sensors collect environmental data.
+2. Data is transmitted via serial communication to the Flask application.
+3. User uploads leaf image for disease prediction.
+4. CNN model classifies the disease.
+5. System can assist in smart irrigation decisions.
 
-## ▶️ How to Run the Project
+## ▶️ How to Run
 
 ```bash
 pip install -r requirements.txt
