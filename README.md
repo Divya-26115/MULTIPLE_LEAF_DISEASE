@@ -44,20 +44,27 @@ Sensor data is transmitted to the web application for monitoring and decision-ma
 
 ## ▶️ How to Run
 
-```bash
+Install the required dependencies:
+
 pip install -r requirements.txt
+
+Run the application:
+
 python app.py
 
-Open:
+Open your browser and visit:
+
 http://127.0.0.1:5000/
 
-##  📄 Research Publication
 
-This project is part of the research paper:
+## 📄 Research Publication
+
+This project is part of the research paper titled:
 
 "GreenVision: Smart Crop Detection & Monitoring"
 
 Submitted to an IEEE International Conference (Currently under review).
+
 
 ## 👩‍💻 Author
 
