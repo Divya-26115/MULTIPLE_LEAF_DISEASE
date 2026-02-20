@@ -1,71 +1,75 @@
-# GreenVision – Leaf Disease Detection & IoT Integration Module
+# 🌱 GreenVision: Smart Crop Detection & Monitoring System
+
+An IoT-based smart agriculture system designed for real-time crop monitoring, disease detection, and automated irrigation control.
+
 
 ## 📌 Project Overview
-GreenVision is an IoT-based Smart Crop Detection & Monitoring system developed as part of an IEEE conference paper (currently under review).
 
-This repository contains the Leaf Disease Detection module integrated with hardware-based environmental monitoring using serial communication.
+GreenVision integrates IoT sensors and Machine Learning to monitor crop health and environmental conditions. The system collects real-time data using ESP32 and environmental sensors, detects leaf diseases using a CNN model, and automates irrigation through a relay mechanism.
 
-The system combines CNN-based image classification with real-time sensor data collection from IoT hardware.
 
 ## 🚀 Features
-- Leaf image upload via Flask web interface
-- CNN-based plant disease classification
-- Real-time prediction results
-- Serial communication with hardware module
-- Integration with environmental sensors (soil moisture, temperature, humidity)
-- SQLite database for user data storage
 
-## 🔌 Hardware Integration
-The system communicates with IoT hardware (ESP32/Arduino) using serial communication.
-
-Sensors used:
-- DHT11 (Temperature & Humidity)
-- Soil Moisture Sensor
-- Relay module for irrigation control
-
-Sensor data is transmitted to the web application for monitoring and decision-making.
-
-## 🛠 Technologies Used
-- Python
-- Flask
-- TensorFlow / Keras (CNN)
-- NumPy
-- SQLite
-- HTML / CSS
-- Serial Communication (PySerial)
-- IoT Hardware (ESP32 / Arduino)
-
-## 🧠 Working Principle
-1. Sensors collect environmental data.
-2. Data is transmitted via serial communication to the Flask application.
-3. User uploads leaf image for disease prediction.
-4. CNN model classifies the disease.
-5. System can assist in smart irrigation decisions.
-
-## ▶️ How to Run
-
-Install the required dependencies:
-
-pip install -r requirements.txt
-
-Run the application:
-
-python app.py
-
-Open your browser and visit:
-
-http://127.0.0.1:5000/
+- Real-time temperature & humidity monitoring (DHT11)
+- Soil moisture detection
+- CNN-based crop disease detection
+- Automated irrigation using relay module
+- Web-based monitoring dashboard (Flask)
+- Serial communication between hardware and software
 
 
-## 📄 Research Publication
+## 🛠️ Technologies Used
 
-This project is part of the research paper titled:
-
-"GreenVision: Smart Crop Detection & Monitoring"
-
-Submitted to an IEEE International Conference (Currently under review).
+Python, Machine Learning (CNN), TensorFlow/Keras, Flask, ESP32/Arduino, IoT Sensors (DHT11, Soil Moisture Sensor), Serial Communication (PySerial), HTML/CSS, SQLite.
 
 
-## 👩‍💻 Author
+## 🏗️ System Architecture
 
-Divya M Nagavand
+1. Sensors collect environmental data.  
+2. ESP32 sends data via serial communication.  
+3. Flask web application processes and displays data.  
+4. CNN model detects leaf diseases.  
+5. Relay module controls irrigation automatically.  
+
+
+## 👥 Project Team
+
+This project was developed as a group project by:
+
+- Divya M Nagavand
+- Keerthi M
+- Hannah Susan Blesson
+- Gagana S
+  
+
+## 📊 Research Work
+
+Research paper titled **"GreenVision: Smart Crop Detection & Monitoring"** submitted to an IEEE International Conference (Under Review).
+
+
+## 📂 How to Run the Project
+
+1. Clone the repository:
+   git clone <your-repo-link>
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+3. Run the Flask application:
+   python app.py
+
+4. Connect ESP32 and ensure correct serial port configuration.
+
+
+## 📌 Future Enhancements
+
+- Cloud integration (AWS / Firebase)  
+- Mobile application support  
+- Advanced disease classification  
+- Real-time farmer alert system  
+
+
+
+## 📄 License
+
+This project is developed for academic purposes.
